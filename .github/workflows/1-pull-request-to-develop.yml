@@ -1,8 +1,8 @@
-name: Build Develop
+name: "1 - [FEAT] Build & PR"
 
 on:
-  pull_request:
-    branches: ["develop"]
+  push:
+    branches: ["feature/**"]
 
 permissions:
   contents: read
@@ -10,8 +10,7 @@ permissions:
   id-token: write
 
 jobs:
-  # Build job
-  build-dev:
+  build-feature:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -48,16 +47,15 @@ jobs:
 
       - name: Build Project
         run: yarn build
-
   createPullRequest:
     runs-on: ubuntu-latest
-    needs: [build-dev]
+    needs: [build-feature]
     steps:
       - name: Checkout Build
         uses: actions/checkout@v4
 
-      # - name: Make changes to pull request
-      #   run: date +%s > report.txt
+      - name: Make changes to pull request
+        run: date +%s > report.txt
 
       - name: Update author information
         run: echo ${{ env.GIT_COMMIT_AUTHOR_NAME }} > AUTHORS
@@ -73,7 +71,7 @@ jobs:
         with:
           branch: develop
           base: ${{ steps.extract_branch.outputs.branch }}
-          title: "PR AUTOMATICO >> [${{ steps.extract_branch.outputs.branch }}] to [main]"
+          title: "PR AUTOMATICO >> [${{ steps.extract_branch.outputs.branch }}] to [develop]"
           token: ${{ secrets.ACTIONS }}
           commit-message: Update report
           signoff: true

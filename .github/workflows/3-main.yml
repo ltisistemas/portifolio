@@ -1,4 +1,4 @@
-name: Build Main
+name: "3 - [MAIN] Build & Deploy"
 
 on:
   push:
