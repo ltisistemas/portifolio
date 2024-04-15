@@ -11,15 +11,18 @@
   </nav>
 </div> -->
 <mat-toolbar>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  <button *ngIf="isMobile" mat-icon-button class="example-icon" (click)="drawer.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
   <span></span>
   <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <button mat-icon-button class="example-icon" (click)="drawer.toggle()">
-    <mat-icon>share</mat-icon>
-  </button>
+  <div class="main-menu" *ngIf="!isMobile">
+    <ul>
+      <li><button mat-button routerLinkActive="active" routerLink="/">Home</button></li>
+      <li><button mat-button routerLinkActive="active" routerLink="/about">About</button></li>
+      <li><button mat-button routerLinkActive="active" routerLink="/skills">Skills</button></li>
+      <li><button mat-button routerLinkActive="active" routerLink="/portifolio">Portifolio</button></li>
+      <li><button mat-button routerLinkActive="active" routerLink="/contact">Contact</button></li>
+    </ul>
+  </div>
 </mat-toolbar>

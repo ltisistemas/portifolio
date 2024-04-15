@@ -1,7 +1,8 @@
 <mat-drawer-container class="example-container" [hasBackdrop]="true">
-  <mat-drawer #drawer mode="side" opened>Menu lateral</mat-drawer>
+  <mat-drawer #drawer mode="side">Menu lateral</mat-drawer>
   <mat-drawer-content>
     <app-header [drawer]="drawer"></app-header>
+    
     <app-main></app-main>
   </mat-drawer-content>
 </mat-drawer-container>
