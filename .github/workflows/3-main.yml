@@ -1,4 +1,4 @@
-name: Build Main
+name: "3 - [MAIN] Build & Deploy"
 
 on:
   push:
@@ -44,6 +44,9 @@ jobs:
       - name: Install dependencies
         if: steps.cache-nodemodules.outputs.cache-hit != 'true'
         run: yarn install --quiet
+
+      - name: Run Unit Tests
+        run: yarn test
 
       - name: Build Project
         run: yarn build
