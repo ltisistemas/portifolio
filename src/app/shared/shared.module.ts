@@ -5,7 +5,7 @@ import { MaterialModule } from './material.module';
 
 @NgModule({
   imports: [CommonModule, FormsModule, ReactiveFormsModule, MaterialModule],
-  exports: [],
+  exports: [CommonModule, FormsModule, ReactiveFormsModule, MaterialModule],
   declarations: [],
   providers: [],
 })
