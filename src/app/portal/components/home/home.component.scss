@@ -92,4 +92,16 @@
       }
     }
   }
+
+  .node-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-right: 32px;
+
+    img {
+      max-width: 100%;
+    }
+  }
 }
