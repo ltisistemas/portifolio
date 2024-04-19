@@ -13,22 +13,30 @@ export class HomeComponent implements OnInit {
   ngOnInit() {}
 
   download() {
+    const link = document.createElement('a');
+    link.href = 'assets/resume_Luiz _felipe_Marinho.pdf';
+    link.download = 'resume_Luiz _felipe_Marinho.pdf';
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
     // https://drive.google.com/file/d/1icP9SG420TyvP6jEumVIEelPzhpq2eb1/view?usp=sharing
 
-    const url =
-      'https://drive.google.com/file/d/1icP9SG420TyvP6jEumVIEelPzhpq2eb1/view';
+    // const url =
+    //   'https://drive.google.com/file/d/1icP9SG420TyvP6jEumVIEelPzhpq2eb1/view';
 
-    let headers = new HttpHeaders();
-    headers = headers.set('Accept', 'application/pdf');
-    this.http.get(url, { headers, responseType: 'blob' }).subscribe({
-      next: (response) => {
-        const blob = new Blob([response], {
-          type: 'applicationapplication/pdf',
-        });
+    // let headers = new HttpHeaders();
+    // headers = headers.set('Accept', 'application/pdf');
+    // this.http.get(url, { headers, responseType: 'blob' }).subscribe({
+    //   next: (response) => {
+    //     const blob = new Blob([response], {
+    //       type: 'applicationapplication/pdf',
+    //     });
 
-        console.log('> Response', response);
-      },
-    });
+    //     console.log('> Response', response);
+    //   },
+    // });
 
     // firstValueFrom(request).then((response) => {
     //   const blob = new Blob([response], { type: 'applicationapplication/pdf' });
