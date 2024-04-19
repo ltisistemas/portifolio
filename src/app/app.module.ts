@@ -9,11 +9,13 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { MaterialModule } from './shared/material.module';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     PortalModule,
     BrowserAnimationsModule,

@@ -6,13 +6,36 @@
     left: 0px;
     top: 0px;
 
-    /* Primary */
     background: #20242d;
     box-shadow: 0px 12px 22px -8px rgba(1, 238, 254, 0.15);
 
-    // padding-top: 12px;
-    // padding-left: 32px;
-    // padding-right: 32px;
+    .main-menu {
+      ul {
+        display: inline-flex;
+        gap: 8px;
+        list-style: none;
+        font-size: 16px;
+        font-family: "Inter";
+        font-weight: bold;
+        color: var(--clear-color);
+        padding-right: 16px;
+
+        button {
+          font-size: 16px;
+          font-family: "Inter";
+          font-weight: bold;
+          color: var(--clear-color);
+          transition: all ease 0.5s;
+
+          &:hover {
+            color: var(--secondary-color) !important;
+          }
+          &.active {
+            color: var(--secondary-color) !important;
+          }
+        }
+      }
+    }
 
     .example-spacer {
       flex: 1 1 auto;

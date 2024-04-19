@@ -7,6 +7,15 @@
     background-color: var(--primary-color);
     color: var(--white-color);
 
+    .example-spacer {
+      flex: 1 1 auto;
+    }
+
+    mat-toolbar {
+      background: transparent !important;
+      color: var(--clear-color) !important;
+    }
+
     mat-drawer-container {
       width: 100%;
       height: 100%;

@@ -1,3 +1,4 @@
+import { Platform } from '@angular/cdk/platform';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +9,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   @Input() drawer: any;
 
-  constructor() {}
+  isMobile = this.platform.ANDROID || this.platform.IOS;
+
+  constructor(private platform: Platform) {}
 
   ngOnInit() {}
 }
